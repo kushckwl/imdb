@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+  <article class="media content-section">
+       <img class="rounded-circle article-img" src="{{ object.poster.url }}">
+       <div class="media-body">
+           <div class="article-metadata">
+               
+               <small class="text-muted">{{ object.year_of_release }}</small>
+               
+                  <a class="btn btn-secondary btn-sm mb-1 mt-1" href="{% url 'update' object.id %}">Update</a>
+                  <a class="btn btn-danger btn-sm mb-1 mt-1" href="{% url 'delete' object.id %}">Delete</a>
+                
+           </div>
+           <h1 class="article-title">{{ object.name }}</h1>
+           
+           <p class="article-content"> {{ object.plot }}</p>
+           <p class="article-content"> {{ object.actor }}</p>
+           <p class="article-content"> {{ object.producer }}</p>
+       </div>
+   </article>
+
+{% endblock %}   
